@@ -1,7 +1,4 @@
 const dinosaur = document.querySelector("#row");
-const allDinosaur = document.querySelector("#row img");
-const line = document.querySelectorAll("ol li");
-const unorderedList = document.querySelector('.secondList')
 const button = document.querySelector("#destroy-all");
 
 dinosaur.addEventListener('click', function(event) {
@@ -11,7 +8,7 @@ dinosaur.addEventListener('click', function(event) {
 })
 
 button.addEventListener('click', function () {
-    const ordered = document.querySelectorAll('ol, li');
+    const ordered = document.querySelectorAll('ol li');
     for(let i = 0; i < ordered.length; i++) {
         const item = ordered[i];
         item.style.textDecoration = 'line-through';
