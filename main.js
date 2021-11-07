@@ -1,6 +1,7 @@
 const dinosaur = document.querySelector("#row");
 const allDinosaur = document.querySelector("#row img");
 const line = document.querySelectorAll("ol li");
+const unorderedList = document.querySelector('.secondList')
 const button = document.querySelector("#destroy-all");
 
 dinosaur.addEventListener('click', function(event) {
@@ -9,18 +10,20 @@ dinosaur.addEventListener('click', function(event) {
     picture.style.width = "0";
 })
 
-for (const list of line) {
-    const element = list;
-    element.addEventListener('click', () => {
-        element.style.textDecoration = "line-through"
-    })
-}
-
-button.addEventListener('click', () => {
-    line.forEach(element => {
-        element.style.textDecoration = "line-through";
-    })
-    allDinosaur.forEach(element => {
-        element.style.width = "0";
-    })
-})
+button.addEventListener('click', function () {
+    const ordered = document.querySelectorAll('ol, li');
+    for(let i = 0; i < ordered.length; i++) {
+        const item = ordered[i];
+        item.style.textDecoration = 'line-through';
+    }
+    const unordered = document.querySelectorAll('ul li');
+    for(let i = 0; i < unordered.length; i++) {
+        const item = unordered[i];
+        item.style.opacity = 0;
+    }
+    const dinos = document.querySelectorAll('img');
+    for(let i = 0; i < dinos.length; i++) {
+        const images = dinos[i];
+        images.style.width = 0;
+    }
+});
